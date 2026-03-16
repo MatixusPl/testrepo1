@@ -84,7 +84,8 @@ if(!isset($_SESSION['logowany']) || !$_SESSION['logowany']) {
         $_SESSION['logdata'] = "";
         echo "<script>alert('Sesja wygasła, zaloguj się ponownie')</script>";
     } else {
-        $dane_uz = mysqli_fetch_row(mysqli_query($conn, "SELECT nazwa FROM uzytkownicy WHERE id=" . $spr[0] . ";"));
+        $dane_uz = mysqli_fetch_row(mysqli_query($conn, "SELECT nazwa, administrator FROM uzytkownicy WHERE id=" . intval($spr[0]) . ";"));
+        $_SESSION['admin'] = isset($dane_uz[1]) && $dane_uz[1] == 1;
     }
 }
 
@@ -194,10 +195,12 @@ if(!isset($_SESSION['logowany']) || !$_SESSION['logowany']) {
 
             <h2 id="change">Zarejestruj się</h2>
         </section>';} else {
+            $admin_link = isset($_SESSION['admin']) && $_SESSION['admin'] ? '<a href="admin/notatki.php">Panel Admina</a>' : '';
             echo '
             <section id="konto_opis">
                 <h1>Twoje konto: ' . $dane_uz[0] . '</h1>
                 <img src="exit.png" id="wyjdz">
+                ' . $admin_link . '
                 <form method="post">
                     <input type="submit" id="wyloguj" name="wyloguj" value="Wyloguj">
                 </form>
@@ -209,6 +212,7 @@ if(!isset($_SESSION['logowany']) || !$_SESSION['logowany']) {
                 mysqli_query($conn, "DELETE FROM sesje WHERE id=" . $_SESSION['logdata'] . ";");
                 $_SESSION['logowany'] = FALSE;
                 $_SESSION['logdata'] = "";
+                $_SESSION['admin'] = FALSE;
                 echo "<script>alert('Wylogowałeś się')</script>";
                 $_POST['wyloguj'] = "";
             }
@@ -221,7 +225,7 @@ if(!isset($_SESSION['logowany']) || !$_SESSION['logowany']) {
         if ($_POST['zaloguj'] == "Zaloguj") {
             
             if ($_POST['nazwa_uz'] !== "" && $_POST['haslo'] !== "") {
-                $q1 = mysqli_query($conn, "SELECT haslo, id FROM uzytkownicy WHERE nazwa='" . $_POST['nazwa_uz'] . "';");
+                $q1 = mysqli_query($conn, "SELECT haslo, id, administrator FROM uzytkownicy WHERE nazwa='" . $_POST['nazwa_uz'] . "';");
                 $ile = mysqli_num_rows($q1);
                 $q1 = mysqli_fetch_row($q1);
                 if ($ile > 0 && sha1($_POST['haslo']) == $q1[0]) {
@@ -231,6 +235,7 @@ if(!isset($_SESSION['logowany']) || !$_SESSION['logowany']) {
                     $ostid = mysqli_fetch_row(mysqli_query($conn, "SELECT id from sesje WHERE id_uzytkownika=" . $q1[1] . " ORDER BY id DESC LIMIT 1 ;"));
                     $_SESSION["logdata"] = $ostid[0];
                     $_SESSION['logowany'] = TRUE;
+                    $_SESSION['admin'] = isset($q1[2]) && $q1[2] == 1;
                 } else {
                     echo "<script>alert('nie udalo ci sie zalogowac')</script>";
                 }
