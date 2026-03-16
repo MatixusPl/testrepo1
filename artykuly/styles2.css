@@ -8,7 +8,7 @@ body {
     background-repeat: no-repeat;
     text-align: center;
     position: absolute;
-    width: 100vw;
+    width: 100%;
     height: 80vh;
     z-index: 0;
 }
@@ -29,8 +29,7 @@ body {
 
 footer {
     width: 100%;
-    position: absolute;
-    bottom: 0;
+    position: relative;
 }
 
 #pn1 {
@@ -50,5 +49,36 @@ footer {
 @media (max-width: 1015px) {
     #pn1 {
         left: 15%;
+    }
+}
+
+@media (max-width: 768px) {
+    #backing {
+        position: relative;
+        width: 100%;
+        height: 40vh;
+    }
+
+    #insides {
+        width: 90%;
+        margin: 5% auto;
+    }
+
+    #pn1 {
+        font-size: 2.5em;
+        position: static;
+        float: none;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    #insides {
+        width: 95%;
+        margin: 3% auto;
+    }
+
+    #pn1 {
+        font-size: 1.8em;
     }
 }
