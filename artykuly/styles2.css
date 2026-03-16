@@ -1,0 +1,54 @@
+body {
+    background-color: #444141;
+}
+
+
+#backing {
+    background-size:cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    position: absolute;
+    width: 100vw;
+    height: 80vh;
+    z-index: 0;
+}
+
+#insides {
+    background-color: #444141;
+    width: 60%;
+    margin: 5% 20%;
+    z-index: 1;
+    position: relative;
+    padding: 3% 0;
+}
+
+#insides h1 {
+    margin: 0;
+    color: #fff;
+}
+
+footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+#pn1 {
+    position: absolute;
+    top: -6%;
+    left: 9%;
+    float: left;
+  height: 20px;
+}
+
+
+@media (max-width: 1270px) {
+    #pn1 {
+        left: 12%
+    }
+}
+@media (max-width: 1015px) {
+    #pn1 {
+        left: 15%;
+    }
+}

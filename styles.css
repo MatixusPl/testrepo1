@@ -1,0 +1,492 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+
+* {
+  font-family: Arial;
+  z-index: 1;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* header */
+header {
+  height: 15vh;
+  width: 100vw;
+  background-color: #302e2e;
+  display: block;
+  color: #fff;
+}
+#logo {
+  height: 90%;
+  margin: 0.75vh;
+  float: left;
+}
+#pn1 {
+  font-family: "Bungee", sans-serif;
+  font-weight: 400;
+  font-size: 5em;
+  font-style: normal;
+  color: #fff;
+  display: block;
+  position: absolute;
+  top: -5%;
+  left: 10%;
+  float: left;
+  bottom: 20%;
+  height: 20px;
+}
+
+/* menu */
+
+nav {
+  width: 50%;
+  height: 100%;
+  color: #302e2e;
+  margin: 0;
+  display: inline-block;
+  margin-left: 5px;
+  font-family: "Outfit", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  position: relative;
+  float: right;
+  color: #fff;
+}
+
+.clicka {
+  color: rgb(176, 104, 104);
+}
+
+#HKS {
+  font-style: italic;
+}
+
+#down {
+  margin-left: 37%;
+}
+.menu-part {
+  display: inline-block;
+  width: 18.5%;
+  height: 100%;
+  background-color: #302e2e;
+  text-align: center;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.menu-part p {
+  margin-top: 40px;
+  text-decoration: none;
+}
+
+#down-menu {
+  display: none;
+  margin-top: -1px;
+}
+
+.menu-part:hover {
+  background-color: #3e3b3b;
+  cursor: pointer;
+}
+
+#down:hover ~ #down-menu,
+#down-menu:hover {
+  display: inline-block;
+  position: relative;
+  margin-left: 37%;
+  z-index: 100;
+}
+
+/* main */
+
+main {
+  background-color: #444141;
+  height: 80vh;
+  width: 100vw;
+  color: #ccc;
+  margin: 0;
+}
+
+#przesuw {
+  width: 68%;
+  padding: 1%;
+  display: inline-block;
+  border-right: solid 1px #302e2e;
+}
+#o1 {
+  width: 100%;
+}
+/*#pasek {
+    width: 1px;
+    height: 70%;
+    background-color: #2f2d2d;
+    display: inline-block;
+}*/
+
+#info-2 {
+  margin: 0;
+  margin-left: 15px;
+  width: 25%;
+  height: 60%;
+  display: inline-block;
+  position: absolute;
+  top: 200px;
+}
+
+#opis {
+  margin-top: -15px;
+}
+
+.grafika {
+  width: 85%;
+}
+.graf-holder {
+  text-align: center;
+}
+
+.none {
+  display: inline-block;
+}
+
+.strzalka {
+  width: 20px;
+  cursor: pointer;
+}
+.przerywnik {
+  display: inline-block;
+  width: 93%;
+}
+
+/* footer */
+
+#stopka {
+  background-color: #3a3838;
+  height: 5vh;
+  color: rgb(170, 170, 170);
+  text-align: center;
+}
+
+img {
+  z-index: 1;
+}
+
+/* UKRYTE ELEMENTY */
+
+.hide {
+  display: none;
+}
+.hide2 {
+  display: none;
+}
+
+#back {
+  width: 100%;
+  height: 100%;
+  background-color: #636363b8;
+  position: absolute;
+  top: 0;
+}
+
+#loguj,
+#szukaj,
+#przeglad,
+#konto_opis {
+  width: 50%;
+  background-color: #636363;
+  border: 3px solid #302e2e;
+  border-radius: 15px;
+  text-align: center;
+}
+
+#loguj,
+#konto_opis {
+  height: 70%;
+  margin: 15% 25%;
+  margin-top: 10%;
+}
+
+#loguj h1,
+#konto_opis h1 {
+  font-family: "Bungee", sans-serif;
+  font-weight: 600;
+  font-size: 50px;
+  margin-top: 10%;
+}
+
+#loguj h2,
+#konto_opis h2 {
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+  display: block;
+  position: relative;
+  bottom: 5%;
+  cursor: pointer;
+}
+
+#loguj form label,
+#loguj form input {
+  font-family: "Outfit", sans-serif;
+}
+#nazwa_uz,
+#haslo,
+#phaslo,
+#mail {
+  width: 55%;
+  margin: 0 22.5%;
+}
+#nazwa_uz,
+#haslo,
+#loguj form label,
+#phaslo,
+#mail {
+  position: relative;
+  top: 20px;
+}
+#zaloguj,
+#change {
+  position: relative;
+}
+
+#maillab,
+#phaslolab {
+  position: relative;
+}
+
+#zaloguj {
+  width: 30%;
+  height: 15%;
+  font-size: 20px;
+}
+
+#wyjdz,
+#wyjdz2,
+#wyjdz3 {
+  width: 30px;
+  height: 25px;
+  position: absolute;
+  cursor: pointer;
+}
+
+#wyjdz {
+  top: 18%;
+  right: 28%;
+}
+
+#wyjdz2, #wyjdz3 {
+  top: 33%;
+  right: 28%;
+}
+
+
+#back2, #back3 {
+  width: 100%;
+  height: 100%;
+  background-color: #636363b8;
+  position: absolute;
+  top: 0;
+}
+
+#szukaj,
+#przeglad {
+  height: 30%;
+  margin: 35% 25%;
+  margin-top: 20%;
+}
+
+#co_chcesz {
+  font-size: 1.5em;
+  margin-top: 2%;
+}
+
+#przechodzenie {
+  font-size: 1.25em;
+  margin-top: 2%;
+}
+
+.hide3 {
+  display: none;
+  position: absolute;
+  height: 1.5em;
+  width: 60%;
+  left: 35%;
+  top: 41%;
+}
+
+.opcja {
+  height: 1.5em;
+  font-size: 1.5em;
+  background-color: rgb(81, 242, 188);
+  border: 1px black solid;
+  width: 50%;
+  cursor: pointer;
+}
+
+.opcja:hover {
+  background-color: rgb(50, 193, 145);
+}
+
+#histList {
+  list-style-type: none;
+}
+
+ul li {
+  font-size: 25px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+ul li:hover {
+  font-weight: bold;
+}
+
+/* RESPONSYWNOŚĆ */
+
+@media (min-height: 850px) {
+  @media (min-width: 1340px) {
+    #o1 {
+      width: 98%;
+    }
+    .przerywnik {
+      width: 92%;
+    }
+  }
+
+  @media (min-width: 1380px) {
+    #o1 {
+      width: 94%;
+    }
+    .przerywnik {
+      width: 88%;
+    }
+    #przesuw {
+      width: 64%;
+    }
+    #info-2 {
+      right: 60px;
+    }
+
+    #wyjdz {
+      top: 24%;
+    }
+    #wyjdz2 {
+      top: 40%;
+    }
+  }
+
+  @media (min-width: 1475px) {
+    #przesuw {
+      position: absolute;
+      left: 20px;
+    }
+    #info-2 {
+      top: 150px;
+    }
+  }
+
+  @media (max-width: 1270px) {
+    #pn1 {
+      left: 13%;
+    }
+  }
+
+  @media (max-width: 1150px) {
+    #down {
+      width: 21%;
+    }
+    #wyjdz2 {
+      top: 30%;
+    }
+  }
+
+  @media (max-width: 1030px) {
+    .przerywnik {
+      width: 88%;
+    }
+  }
+
+  @media (max-width: 1015px) {
+    nav {
+      width: 45%;
+    }
+    .menu-part {
+      width: 25%;
+    }
+    #down {
+      margin-left: 25%;
+    }
+
+    #wyjdz {
+      top: 14%;
+    }
+
+    #wyjdz2 {
+      top: 25%;
+    }
+
+    #pn1 {
+      left: 16%;
+    }
+  }
+
+  @media (max-width: 800px) {
+    #wyjdz {
+      top: 10%;
+    }
+  }
+}
+
+@media (max-height: 850px) {
+  @media (min-width: 1080px) {
+    #info-2 {
+      top: 150px;
+    }
+  }
+
+  @media (min-width: 1150px) {
+    #przesuw {
+      position: absolute;
+      left: 20px;
+      bottom: calc(5vh + 10px);
+    }
+    #info-2 {
+      right: 20px;
+    }
+  }
+
+  @media (min-width: 1245px) {
+    #przesuw {
+      width: 60%;
+    }
+    #info-2 {
+      right: 50px;
+    }
+  }
+
+  @media (min-width: 1390px) {
+    #przesuw {
+      width: 50%;
+      left: 50px;
+    }
+    #info-2 {
+      right: 150px;
+      height: 45%;
+      top: 120px;
+    }
+  }
+}
+
+@media (min-height: 1000px) {
+  @media (min-width: 1400px) {
+    #info-2 {
+      top: 220px;
+    }
+  }
+}
